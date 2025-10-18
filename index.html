@@ -1,25 +1,91 @@
 <!DOCTYPE html>
 <html lang="is">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="icon"
-      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>🎨</text></svg>"
-    />
-    <title>Listasafnið v5</title>
-    <meta
-      name="description"
-      content="Listasafnið heldur margar áhugaverðar sýningar og stendur fyrir viðburðum."
-    />
-    <meta property="og:title" content="Listasafnið" />
-    <meta
-      property="og:description"
-      content="Listasafnið heldur margar áhugaverðar sýningar og stendur fyrir viðburðum."
-    />
-    <meta property="og:image" content="/myndir/sharing.jpg" />
-    <link rel="stylesheet" href="./styles.scss" />
-  </head>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <span class="logo" aria-hidden="true">λ</span>
+      <span class="title">Forritarafjelagið</span>
+    </a>
+
+    <nav aria-label="Aðalvalmynd">
+      <ul class="nav">
+        <li><a href="/" aria-current="page">Forsíða</a></li>
+        <li><a href="/lausnir">Lausnir</a></li>
+        <li><a href="/um-okkur">Um okkur</a></li>
+        <!-- Samkvæmt kröfu: Starfsfólk -> forsíða -->
+        <li><a href="/">Starfsfólk</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  /* Lágmarks stillingar */
+  .site-header {
+    border-bottom: 1px solid #e5e7eb;
+    background: #ffffff;
+  }
+  .site-header .wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap; /* brýtur undir smærra */
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: inherit;
+    text-decoration: none;
+  }
+  .logo {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    border: 1px solid #e5e7eb;
+    font-weight: 700;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  .title {
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  .nav {
+    list-style: none;
+    display: flex;
+    gap: 4px;
+    margin: 0;
+    padding: 0;
+  }
+  .nav a {
+    display: inline-block;
+    padding: 8px 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #111827;
+  }
+  .nav a:hover { background: #f3f4f6; }
+  .nav a[aria-current="page"] {
+    background: #eef2ff;
+    color: #3730a3;
+  }
+
+  /* Mjós skjár: raða undir hvort annað */
+  @media (max-width: 640px) {
+    .site-header .wrap {
+      justify-content: center;
+    }
+    .nav { flex-wrap: wrap; justify-content: center; }
+  }
+</style>
   <body>
         <section>
             <h1>Forritun er okkar fag</h1>
@@ -135,3 +201,15 @@
 
 
   </body>
+  <div id="site-footer"></div>
+  
+<script>
+  async function inject(id, url) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const res = await fetch(url);
+    el.innerHTML = await res.text();
+  }
+
+  inject('site-footer', 'partials/footer.html');
+</script>

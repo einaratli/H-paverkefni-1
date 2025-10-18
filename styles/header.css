@@ -1,0 +1,44 @@
+.site-header{
+  background: var(--bg-soft);
+  border-bottom: 1px solid var(--line);
+}
+.header__inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 1rem;
+  padding: 0.9rem 0;
+}
+
+.brand{
+  display:flex; align-items:center; gap:.6rem;
+  color: var(--ink);
+}
+.brand__logo{
+  font-size: 1.4rem;
+  background: var(--ink);
+  color: #0a0a0b;
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  display:grid; place-items:center;
+  font-weight: 700; line-height: 1;
+}
+.brand__name{ font-weight: 700; letter-spacing: .2px; }
+
+.nav__list{
+  margin:0; padding:0; list-style:none;
+  display:flex; gap: 1rem; flex-wrap: wrap;
+}
+.nav__link{
+  padding: .4rem .6rem;
+  border-radius: .5rem;
+  transition: background .15s ease, color .15s ease;
+}
+.nav__link:hover, .nav__link:focus{
+  background: #1f1f24; color: var(--ink);
+}
+
+/* Active state helper (settu class á viðeigandi <a>) */
+.nav__link.is-active{
+  background: #222229; color: var(--ink);
+}

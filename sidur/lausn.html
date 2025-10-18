@@ -1,25 +1,21 @@
 <!DOCTYPE html>
 <html lang="is">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="icon"
-      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>🎨</text></svg>"
-    />
-    <title>Listasafnið v5</title>
-    <meta
-      name="description"
-      content="Listasafnið heldur margar áhugaverðar sýningar og stendur fyrir viðburðum."
-    />
-    <meta property="og:title" content="Listasafnið" />
-    <meta
-      property="og:description"
-      content="Listasafnið heldur margar áhugaverðar sýningar og stendur fyrir viðburðum."
-    />
-    <meta property="og:image" content="/myndir/sharing.jpg" />
-    <link rel="stylesheet" href="./styles.scss" />
-  </head>
+<!doctype html>
+<html lang="is">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Forritarafjelagið</title>
+
+  <!-- Stílar -->
+  <link rel="stylesheet" href="/styles/common.css">
+  <link rel="stylesheet" href="/styles/header.css">
+  <link rel="stylesheet" href="/styles/footer.css">
+</head>
+<body>
+
+  <!-- Placeholder fyrir haus -->
+  <div id="site-header"></div>
   <body>
     
     <section>
@@ -69,4 +65,18 @@
 
 
 
-  </body>
+
+    <!-- Placeholder fyrir fót -->
+  <div id="site-footer"></div>
+
+  <!-- Import JS -->
+  <script src="/scripts/include.js" defer></script>
+  <script>
+    // Sprautum inn partials þegar DOM er til
+    window.addEventListener('DOMContentLoaded', () => {
+      inject("site-header", "/partials/header.html");
+      inject("site-footer", "/partials/footer.html");
+    });
+  </script>
+</body>
+</html>
