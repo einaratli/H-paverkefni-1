@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-  "dev": "sass --watch scss:public",
-  "build": "sass scss:public --no-source-map",
-  "lint": "stylelint '**/*.scss'"
+  "dev": "sass --watch scss/main.scss styles/main.css",
+  "build": "sass scss/main.scss styles/main.css --style=compressed --no-source-map",
+  "lint": "stylelint 'scss/**/*.scss'"
 }
 ,
   "repository": {
