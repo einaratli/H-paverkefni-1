@@ -1,0 +1,130 @@
+.filter-card {
+  display: flex;
+  flex-direction: column;
+  width: 277px;
+  gap: 24px;
+  padding: 16px;
+  background: #fff;
+  color: #111214;
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+}
+
+.h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.filter-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.filter-row:hover {
+  background: #fafafa;
+}
+
+.filter-title {
+  font-weight: 700;
+}
+.filter-subtitle {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.filter-divider {
+  height: 1px;
+  background: #eee;
+  margin: 10px 0;
+}
+
+.filter-cost {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.filter-cost-label {
+  font-weight: 700;
+}
+.filter-cost-value {
+  font-variant-numeric: tabular-nums;
+}
+
+/* visual checkboxes */
+.filter-check {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  border: 2px solid #1f2937;
+  border-radius: 6px;
+  background: #fff;
+  display: grid;
+  place-items: center;
+}
+.filter-check::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  background: #111;
+  transform: scale(0);
+}
+.filter-check--on::after {
+  transform: scale(1);
+}
+
+/* fake slider */
+.fake-range {
+  --min: 0%;
+  --max: 100%;
+  position: relative;
+  height: 24px;
+}
+.fake-range__track {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 6px;
+  transform: translateY(-50%);
+  background: #e5e7eb;
+  border-radius: 999px;
+}
+.fake-range__fill {
+  position: absolute;
+  top: 50%;
+  height: 6px;
+  transform: translateY(-50%);
+  left: var(--min);
+  right: calc(100% - var(--max));
+  background: #e5e7eb;
+  border-radius: 999px;
+}
+.fake-range__thumb {
+  position: absolute;
+  top: 50%;
+  width: 18px;
+  height: 18px;
+  transform: translate(-50%, -50%);
+  background: #111;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+.fake-range__thumb--min {
+  left: var(--min);
+}
+.fake-range__thumb--max {
+  left: var(--max);
+}
+
+@media (max-width: 860px) {
+  .filter-card {
+    width: 100%;
+  }
+}
