@@ -109,6 +109,7 @@
   }
 </style>
   <body>
+    <main>
         <section>
             <h1>Forritun er okkar fag</h1>
             <h2>Sanngjorn verd fyrir allar lausnir</h2>
@@ -219,19 +220,9 @@
     </div>
 
         </section>
+</main>
 
-
-
+<link rel="stylesheet" href="/styles/footer.css">
+<div data-include="/partials/footer.html"></div>
   </body>
-  <div id="site-footer"></div>
-  
-<script>
-  async function inject(id, url) {
-    const el = document.getElementById(id);
-    if (!el) return;
-    const res = await fetch(url);
-    el.innerHTML = await res.text();
-  }
-
-  inject('site-footer', 'partials/footer.html');
-</script>
+</html>

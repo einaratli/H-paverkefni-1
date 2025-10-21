@@ -1,48 +1,56 @@
-.site-footer{
-  background: var(--bg-soft);
-  border-top: 1px solid var(--line);
-  margin-top: 2rem;
+/* Samstíll við header */
+.site-footer {
+  border-top: 1px solid #e5e7eb;
+  background: #ffffff;
+  color: #111827;
 }
-.footer__inner{
-  display:grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-  padding: 2rem 0;
-}
-.footer__title{
-  margin: 0 0 .8rem 0;
-  font-size: 1rem;
-  color: var(--ink);
-}
-.footer__list{ margin:0; padding:0; list-style:none; }
-.footer__list li{ margin: .45rem 0; }
-
-.social{
-  display:flex; gap: .6rem; align-items:center;
-}
-.social__badge{
-  display:inline-grid; place-items:center;
-  width: 32px; height: 32px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: #1b1b20;
-  color: var(--ink);
-  font-size: .85rem;
-  user-select: none;
+.site-footer .wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
 }
 
-.footer__bottom{
-  text-align:center;
-  padding: .8rem 1rem 1.2rem;
-  color: var(--ink-dim);
-  border-top: 1px solid var(--line);
+.foot-title {
+  margin: 0 0 8px 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.foot-list {
+  list-style: none;
   margin: 0;
+  padding: 0;
+}
+.foot-list li { margin: 6px 0; }
+.foot-list a {
+  text-decoration: none;
+  color: #111827;
+  padding: 4px 6px;
+  border-radius: 8px;
+}
+.foot-list a:hover { background: #f3f4f6; }
+
+/* Samfélagsmerki – einföld „badge“ stílsmíði */
+.socials { display: flex; gap: 8px; align-items: center; }
+.icon {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  font-weight: 700;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
-/* Responsivt */
-@media (max-width: 900px){
-  .footer__inner{ grid-template-columns: repeat(2, 1fr); }
+/* Mjós skjár: tvær dálkaraðir, svo ein */
+@media (max-width: 900px) {
+  .site-footer .wrap { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
-@media (max-width: 560px){
-  .footer__inner{ grid-template-columns: 1fr; }
+@media (max-width: 560px) {
+  .site-footer .wrap { grid-template-columns: 1fr; }
+  .socials { flex-wrap: wrap; }
 }

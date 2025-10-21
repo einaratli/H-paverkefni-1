@@ -1,35 +1,55 @@
 <!DOCTYPE html>
 <html lang="is">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="icon"
-      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>🎨</text></svg>"
-    />
-    <title>Listasafnið v5</title>
-    <meta
-      name="description"
-      content="Listasafnið heldur margar áhugaverðar sýningar og stendur fyrir viðburðum."
-    />
-    <meta property="og:title" content="Listasafnið" />
-    <meta
-      property="og:description"
-      content="Listasafnið heldur margar áhugaverðar sýningar og stendur fyrir viðburðum."
-    />
-    <meta property="og:image" content="/myndir/sharing.jpg" />
-    <link rel="stylesheet" href="./styles.scss" />
-  </head>
-  <body>
-    <section>
-        <h1>Um okkur</h1>
-        <h2>Saga Forritafjelagsins</h2>
-            <h3>Stofnun</h3>
-            <h4>Arid 1963</h4>
-            <h3>
-                Fyrsta lausnins
-            </h3>
-            <h4>arid 1975</h4>
-            
-    </section>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Forritarafjelagið</title>
+
+  <!-- Stílar (relative to sidur/) -->
+  <link rel="stylesheet" href="../styles/styles.css">
+  <link rel="stylesheet" href="../styles/header.css">
+  <link rel="stylesheet" href="../styles/footer.css">
+
+  <!-- Auto-include script (runs on DOMContentLoaded) -->
+  <script src="../scripts/include.js" defer></script>
+</head>
+<body>
+
+  <!-- Haus (header partial) -->
+  <div data-include="../partials/header.html"></div>
+<main>
+<section class="hero">
+  <div class="img-wrap">
+    <img class="hero__img" src="../myndir/about.jpg" alt="mynd sem synir kúlu og tölvu" />
+    <div class="on-image">
+      <h1>Um okkur</h1>
+      <h2>Saga Forritarafjelagsins</h2>
+    </div>
+  </div>
+</section>
+<section class="page">
+<div class="page__section">
+  <h3>Stofnun</h3>
+  <h4>Árið 1963</h4>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ac suscipit eros, in pulvinar dui. Nam odio libero, maximus at nisl fermentum, suscipit feugiat nisi. Etiam bibendum lacus eget feugiat laoreet. In commodo consequat euismod. Integer condimentum, est nec tempus congue, felis nulla tincidunt diam, viverra dapibus purus sem non nulla. In hac habitasse platea dictumst. Vivamus sagittis lacinia fermentum. In felis nibh, imperdiet vel viverra sit amet, consectetur hendrerit orci. Aenean in magna volutpat mi dictum elementum. In dolor ex, tristique quis tellus id, consectetur lobortis odio. Duis tincidunt congue velit, nec pretium dolor faucibus ac. Duis non odio a tellus vehicula ullamcorper. Praesent sit amet sem quam. Morbi ultricies porta diam, vel malesuada mauris placerat a.</p>
+  <p>Pellentesque venenatis egestas tortor, id lobortis nulla feugiat vel. Etiam varius nisl a luctus tempus. Donec gravida lacus dui, sit amet malesuada mi gravida eget. Morbi laoreet libero ut viverra feugiat. Sed vitae dictum mauris. Fusce eget mauris scelerisque, accumsan nibh sit amet, ullamcorper risus. Donec mollis accumsan ultrices. Aenean dictum magna vel ullamcorper maximus. Praesent mollis nisl ac luctus ultrices. Aliquam hendrerit, felis vitae pulvinar gravida, nibh arcu rutrum neque, id tempor sapien lacus nec mi</p>
+  <p>Etiam suscipit, purus dignissim rutrum blandit, magna lorem fringilla lorem, egestas laoreet diam risus vitae tortor. Vestibulum molestie nisl a purus bibendum lacinia. Duis ornare imperdiet ante et lobortis. Suspendisse id justo at mi pretium facilisis et ac mi. In hac habitasse platea dictumst. Vivamus blandit leo at vestibulum tempus. Ut auctor aliquam magna, et aliquet magna. Suspendisse ut ipsum iaculis, eleifend lectus sit amet, bibendum mauris. Nunc a purus vitae risus posuere tempus id at erat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+  <p>Suspendisse et lacus vel mauris tristique vulputate. Nulla sollicitudin ipsum eu eleifend vulputate. Nullam malesuada eleifend fringilla. Aenean at tincidunt ligula. Sed ac sem massa. Sed finibus nulla at orci pellentesque gravida. Etiam et lectus est. Aenean quis arcu a risus posuere ultricies. Nam nec justo eget nisi consequat fermentum. Phasellus convallis nisi arcu, id tincidunt massa condimentum ac. Etiam sem justo, pretium at condimentum sed, interdum vel nunc.</p>
+  <p>Morbi a dolor in velit bibendum malesuada non a nisl. Morbi mollis felis erat, a semper erat consequat non. Quisque faucibus a lacus quis tincidunt. Donec tincidunt enim eu ligula pellentesque, ac mollis nibh lobortis. Fusce pretium semper finibus. Vivamus blandit, velit porttitor sagittis fringilla, urna tortor aliquam lorem, ac euismod ante ex ac ipsum. Sed semper semper ex, eleifend venenatis tortor.
+
+</p>
+<h3>Fyrsta lausnin</h3>
+<h4>Árið 1975</h4>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ac suscipit eros, in pulvinar dui. Nam odio libero, maximus at nisl fermentum, suscipit feugiat nisi. Etiam bibendum lacus eget feugiat laoreet. In commodo consequat euismod. Integer condimentum, est nec tempus congue, felis nulla tincidunt diam, viverra dapibus purus sem non nulla. In hac habitasse platea dictumst. Vivamus sagittis lacinia fermentum. In felis nibh, imperdiet vel viverra sit amet, consectetur hendrerit orci. Aenean in magna volutpat mi dictum elementum. In dolor ex, tristique quis tellus id, consectetur lobortis odio. Duis tincidunt congue velit, nec pretium dolor faucibus ac. Duis non odio a tellus vehicula ullamcorper. Praesent sit amet sem quam. Morbi ultricies porta diam, vel malesuada mauris placerat a.</p>
+<p>Pellentesque venenatis egestas tortor, id lobortis nulla feugiat vel. Etiam varius nisl a luctus tempus. Donec gravida lacus dui, sit amet malesuada mi gravida eget. Morbi laoreet libero ut viverra feugiat. Sed vitae dictum mauris. Fusce eget mauris scelerisque, accumsan nibh sit amet, ullamcorper risus. Donec mollis accumsan ultrices. Aenean dictum magna vel ullamcorper maximus. Praesent mollis nisl ac luctus ultrices. Aliquam hendrerit, felis vitae pulvinar gravida, nibh arcu rutrum neque, id tempor sapien lacus nec mi.</p>
+<p>Etiam suscipit, purus dignissim rutrum blandit, magna lorem fringilla lorem, egestas laoreet diam risus vitae tortor. Vestibulum molestie nisl a purus bibendum lacinia. Duis ornare imperdiet ante et lobortis. Suspendisse id justo at mi pretium facilisis et ac mi. In hac habitasse platea dictumst. Vivamus blandit leo at vestibulum tempus. Ut auctor aliquam magna, et aliquet magna. Suspendisse ut ipsum iaculis, eleifend lectus sit amet, bibendum mauris. Nunc a purus vitae risus posuere tempus id at erat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+<p>Suspendisse et lacus vel mauris tristique vulputate. Nulla sollicitudin ipsum eu eleifend vulputate. Nullam malesuada eleifend fringilla. Aenean at tincidunt ligula. Sed ac sem massa. Sed finibus nulla at orci pellentesque gravida. Etiam et lectus est. Aenean quis arcu a risus posuere ultricies. Nam nec justo eget nisi consequat fermentum. Phasellus convallis nisi arcu, id tincidunt massa condimentum ac. Etiam sem justo, pretium at condimentum sed, interdum vel nunc.</p>
+<p>Morbi a dolor in velit bibendum malesuada non a nisl. Morbi mollis felis erat, a semper erat consequat non. Quisque faucibus a lacus quis tincidunt. Donec tincidunt enim eu ligula pellentesque, ac mollis nibh lobortis. Fusce pretium semper finibus. Vivamus blandit, velit porttitor sagittis fringilla, urna tortor aliquam lorem, ac euismod ante ex ac ipsum. Sed semper semper ex, eleifend venenatis tortor.</p>
+</div>
+</section>
+
+
+    </main>
+    <link rel="stylesheet" href="../styles/footer.css">
+<div data-include="../partials/footer.html"></div>
   </body>
