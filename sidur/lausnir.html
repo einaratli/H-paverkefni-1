@@ -3,139 +3,262 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="icon"
-      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>🎨</text></svg>"
-    />
     <title>Listasafnið v5</title>
-    <meta
-      name="description"
-      content="Listasafnið heldur margar áhugaverðar sýningar og stendur fyrir viðburðum."
-    />
-    <meta property="og:title" content="Listasafnið" />
-    <meta
-      property="og:description"
-      content="Listasafnið heldur margar áhugaverðar sýningar og stendur fyrir viðburðum."
-    />
-    <meta property="og:image" content="/myndir/sharing.jpg" />
-    <link rel="stylesheet" href="../styles/main.css" />
+
+    <style>
+      /* ===== Base layout ===== */
+      :root {
+        --gap: 24px;
+        --border: #d1d5db;
+        --border-light: #e5e7eb;
+        --text: #111827;
+        --muted: #6b7280;
+        --bg: #ffffff;
+        --card: #ffffff;
+      }
+      html, body { margin:0; padding:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; color:var(--text); background:#f7f7f8; }
+      body { padding: 24px; }
+
+      h1 { margin: 0 0 16px; }
+      h2, h3, h4 { margin: 24px 0 8px; }
+
+      /* Two-column layout: left filter, right content */
+      .layout {
+        display: grid;
+        grid-template-columns: 320px 1fr;   /* filter width + content */
+        gap: var(--gap);
+        align-items: start;
+      }
+
+      /* ===== Filter card ===== */
+      .filter-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 16px;
+        position: sticky; top: 16px; /* keeps the filter visible while scrolling */
+      }
+      .filter-row {
+        display: grid;
+        grid-template-columns: 20px 1fr;
+        gap: 12px;
+        align-items: start;
+        cursor: pointer;
+        user-select: none;
+        margin-bottom: 12px;
+      }
+      .filter-title { font-weight: 600; }
+      .filter-subtitle { color: var(--muted); font-size: 12px; margin-top: 2px; }
+      .filter-check {
+        width: 18px; height: 18px; border: 1px solid var(--border); border-radius: 4px;
+        display: inline-block; position: relative; background:#fff;
+      }
+      .filter-check--on {
+        background: #111827; border-color:#111827;
+      }
+      .filter-divider { height: 1px; background: var(--border-light); margin: 12px 0; }
+
+      .filter-cost { display:flex; justify-content: space-between; align-items:center; font-size: 14px; margin-bottom: 8px; }
+      .filter-cost-label { color: var(--muted); }
+      .filter-cost-value { font-variant-numeric: tabular-nums; }
+
+      /* Fake range (visual only) */
+      .fake-range { position: relative; height: 22px; margin: 8px 0 4px; }
+      .fake-range__track {
+        height: 6px; border-radius: 999px; background: #e5e7eb;
+      }
+      .fake-range__fill {
+        position:absolute; left: 10%; right: 0; top: 0; height: 6px;
+        border-radius: 999px; background: #9ca3af;
+      }
+      .fake-range__thumb {
+        position:absolute; top: -7px; width: 18px; height: 18px; border-radius: 50%;
+        background:#111827; transform: translateX(-50%);
+      }
+      .fake-range__thumb--min { left: 0%; }
+      .fake-range__thumb--max { left: 100%; }
+
+      /* ===== Toolbar row (search next to filter) ===== */
+      .toolbar {
+        display: flex;
+        align-items: center;
+        gap: var(--gap);  /* the 24px you asked for */
+        margin-bottom: 16px;
+      }
+
+      /* Search bar 481×40 */
+      .searchbar {
+        --w: 481px;
+        --h: 40px;
+        width: var(--w);
+        height: var(--h);
+        display: flex;
+        align-items: center;
+        border: 1px solid var(--border);
+        border-radius: 9999px;
+        background: var(--bg);
+        overflow: hidden;
+        opacity: 1; /* as requested */
+      }
+      .searchbar input {
+        flex: 1;
+        height: 100%;
+        border: 0;
+        outline: 0;
+        padding: 0 14px 0 16px;
+        font-size: 14px;
+        background: transparent;
+      }
+      .searchbar button {
+        height: 100%;
+        width: var(--h); /* square button */
+        display: grid;
+        place-items: center;
+        border: 0;
+        border-left: 1px solid var(--border-light);
+        background: #f8fafc;
+        cursor: pointer;
+      }
+      .searchbar svg { display:block; fill: var(--text); }
+      .searchbar:focus-within {
+        border-color: #2563eb;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+      }
+
+      /* Optional chips (kept simple) */
+      .chip {
+        display:inline-flex; align-items:center; gap:8px;
+        height: 32px; padding: 0 12px; border:1px solid var(--border);
+        border-radius: 9999px; background:#111827; color:#fff; font-size: 13px;
+      }
+
+      /* Content cards/images just to keep your demo tidy */
+      .img-wrap { margin: 12px 0; }
+      .img { display:block; width: 100%; height: auto; border-radius: 8px; border:1px solid var(--border-light); background:#fff; }
+      button { display:inline-block; min-height: 32px; min-width: 32px; border-radius: 8px; border:1px solid var(--border); background:#fff; }
+      .content { padding-right: 8px; } /* small breathing room on right */
+    </style>
   </head>
+
   <body>
-    <h1>Launsayfirlit</h1>
-    <aside class="filter-card" aria-labelledby="filters">
- 
+    <h1>Lausnayfirlit</h1>
 
-  <label class="filter-row" role="presentation">
-    <span class="filter-check" aria-hidden="true"></span>
-    <div>
-      <div class="filter-title">Vefforritun</div>
-      <div class="filter-subtitle">Lausnir fyrir vefi og vefforrit</div>
-    </div>
-  </label>
+    <!-- Two-column wrapper -->
+    <div class="layout">
+      <!-- LEFT: Filter box (your original markup) -->
+      <aside class="filter-card" aria-labelledby="filters">
+        <label class="filter-row" role="presentation">
+          <span class="filter-check" aria-hidden="true"></span>
+          <div>
+            <div class="filter-title">Vefforritun</div>
+            <div class="filter-subtitle">Lausnir fyrir vefi og vefforrit</div>
+          </div>
+        </label>
 
-  <label class="filter-row" role="presentation">
-    <span class="filter-check filter-check--on" aria-hidden="true"></span>
-    <div>
-      <div class="filter-title">Prófanir</div>
-      <div class="filter-subtitle">Prófanalausnir</div>
-    </div>
-  </label>
+        <label class="filter-row" role="presentation">
+          <span class="filter-check filter-check--on" aria-hidden="true"></span>
+          <div>
+            <div class="filter-title">Prófanir</div>
+            <div class="filter-subtitle">Prófanalausnir</div>
+          </div>
+        </label>
 
-  <label class="filter-row" role="presentation">
-    <span class="filter-check filter-check--on" aria-hidden="true"></span>
-    <div>
-      <div class="filter-title">Merking</div>
-      <div class="filter-subtitle">Lorem ipsum dolor</div>
-    </div>
-  </label>
+        <label class="filter-row" role="presentation">
+          <span class="filter-check filter-check--on" aria-hidden="true"></span>
+          <div>
+            <div class="filter-title">Merking</div>
+            <div class="filter-subtitle">Lorem ipsum dolor</div>
+          </div>
+        </label>
 
-  <div class="filter-divider"></div>
+        <div class="filter-divider"></div>
 
-  <div class="filter-cost">
-    <span class="filter-cost-label">Kostnaður</span>
-    <span class="filter-cost-value">25.000–100.000</span>
-  </div>
+        <div class="filter-cost">
+          <span class="filter-cost-label">Kostnaður</span>
+          <span class="filter-cost-value">25.000–100.000</span>
+        </div>
 
-  <div class="fake-range" aria-hidden="true">
-    <div class="fake-range__track"></div>
-    <div class="fake-range__fill"></div>
-    <div class="fake-range__thumb fake-range__thumb--min" title="min"></div>
-    <div class="fake-range__thumb fake-range__thumb--max" title="max"></div>
-  </div>
-</aside>
-    <h2>Flokkar-ekki synilget</h2>
-    <h2>lausnir=ekki synilegt</h2>
-    <h3>Rada eftir ekki synilegt</h3>
-    <h4>Forritunarumhverfi og profanir</h4>
-    <p>Allt um forritunarumhverfi og mismunandi lei[ir til að prófa forrit í þeim</p>
-     <div class="img-wrap">
-      <img
-        class="img"
-        src="../myndir/forritari.jpg"
-        width="500"
-        alt="Þröngt skot sem sýnir eingöngu inngang og glugga við hliðina á honum. Húsið er hvítt með rauðu þaki. Upp að innganginum eru nokkrar tröppur og sitthvoru megin eru hvítar súlur sem ramma hurðina inn."
-      />
+        <div class="fake-range" aria-hidden="true">
+          <div class="fake-range__track"></div>
+          <div class="fake-range__fill"></div>
+          <div class="fake-range__thumb fake-range__thumb--min" title="min"></div>
+          <div class="fake-range__thumb fake-range__thumb--max" title="max"></div>
+        </div>
+      </aside>
+
+      <!-- RIGHT: Search + content -->
+      <main class="content">
+        <!-- Toolbar row (search sits next to filter, same top line) -->
+        <div class="toolbar">
+          <form class="searchbar" role="search" aria-label="Leita" onsubmit="event.preventDefault();">
+            <input type="search" placeholder="Leita" aria-label="Leita" />
+            <button type="submit" aria-label="Leita">
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                <path d="M10.5 3a7.5 7.5 0 0 1 5.93 12.2l4.19 4.19-1.41 1.41-4.19-4.19A7.5 7.5 0 1 1 10.5 3zm0 2a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11z"/>
+              </svg>
+            </button>
+          </form>
+
+          <!-- Example chips (optional) -->
+          <span class="chip">Nýjast</span>
+          <span class="chip" style="background:#fff;color:#111;border-color:#d1d5db;">Verð lægst fyrst</span>
+          <span class="chip" style="background:#fff;color:#111;border-color:#d1d5db;">Verð hæst fyrst</span>
+        </div>
+
+        <!-- Your original content -->
+        <h2>Flokkar — ekki sýnilegt</h2>
+        <h2>Lausnir — ekki sýnilegt</h2>
+        <h3>Raða eftir — ekki sýnilegt</h3>
+
+        <h4>Forritunarumhverfi og prófanir</h4>
+        <p>Allt um forritunarumhverfi og mismunandi leiðir til að prófa forrit í þeim</p>
+        <div class="img-wrap">
+          <img class="img" src="../myndir/forritari.jpg" width="500"
+               alt="Forritari við vinnu, tölvuskjár og ljós." />
+        </div>
+        <button></button>
+
+        <h4>Lausn 2</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>75.000 kr.-</p>
+        <div class="img-wrap">
+          <img class="img" src="../myndir/abstrakt.png" width="500" alt="Abstrakt mynd." />
+        </div>
+        <button></button>
+
+        <h4>Lausn 3</h4>
+        <p>Vestibulum vestibulum felis nulla, in suscipit justo dignissim ultrices. Nunc id porttitor mauris.</p>
+        <p>50.000 kr.-</p>
+        <div class="img-wrap">
+          <img class="img" src="../myndir/placeholder.png" width="500" alt="Placeholder mynd." />
+        </div>
+        <button></button>
+
+        <h4>Lausn 4</h4>
+        <p>Vestibulum ac felis in lacus porta interdum. Curabitur vitae quam non massa interdum consectetur sed ut tellus.</p>
+        <p>100.000 kr.-</p>
+        <div class="img-wrap">
+          <img class="img" src="../myndir/placeholder.png" width="500" alt="Placeholder mynd." />
+        </div>
+        <button></button>
+
+        <h4>Lausn 5</h4>
+        <div class="img-wrap">
+          <img class="img" src="../myndir/placeholder.png" width="500" alt="Placeholder mynd." />
+        </div>
+        <p>Vivamus in imperdiet lectus. Phasellus sed arcu eu augue laoreet efficitur vitae at nisi.</p>
+        <p>25.000 kr.-</p>
+        <button></button>
+
+        <h4>Lausn 6</h4>
+        <p>Lorem id porttitor mauris. Nunc id porttitor mauris.</p>
+        <p>100.000 kr.-</p>
+        <div class="img-wrap">
+          <img class="img" src="../myndir/placeholder.png" width="500" alt="Placeholder mynd." />
+        </div>
+        <button></button>
+      </main>
     </div>
-    <button></button>
-    <h4>Lausn 2</h4>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    <p>75.000 kr.-</p>
-     <div class="img-wrap">
-      <img
-        class="img"
-        src="../myndir/abstrakt.png"
-        width="500"
-        alt="Þröngt skot sem sýnir eingöngu inngang og glugga við hliðina á honum. Húsið er hvítt með rauðu þaki. Upp að innganginum eru nokkrar tröppur og sitthvoru megin eru hvítar súlur sem ramma hurðina inn."
-      />
-    </div>
-    <button></button>
-    <h4>Lausn 3</h4>
-    <p>Vestibulum vestibulum felis nulla, in suscipit justo dignissim ultrices. Nunc id porttitor mauris. Nunc id porttitor mauris.
-    </p>
-    <p>50.000 kr.-</p>
-     <div class="img-wrap">
-      <img
-        class="img"
-        src="../myndir/placeholder.png"
-        width="500"
-        alt="Þröngt skot sem sýnir eingöngu inngang og glugga við hliðina á honum. Húsið er hvítt með rauðu þaki. Upp að innganginum eru nokkrar tröppur og sitthvoru megin eru hvítar súlur sem ramma hurðina inn."
-      />
-    </div>
-    <button></button>
-    <h4>Lausn 4</h4>
-    <p>Vestibulum ac felis in lacus porta interdum. Curabitur vitae quam non massa interdum consectetur sed ut tellus.</p>
-    <p>100.000 kr.-</p>
-     <div class="img-wrap">
-      <img
-        class="img"
-        src="../myndir/placeholder.png"
-        width="500"
-        alt="Þröngt skot sem sýnir eingöngu inngang og glugga við hliðina á honum. Húsið er hvítt með rauðu þaki. Upp að innganginum eru nokkrar tröppur og sitthvoru megin eru hvítar súlur sem ramma hurðina inn."
-      />
-    </div>
-    <button></button>
-    <h4>Lausn 5</h4>
-     <div class="img-wrap">
-      <img
-        class="img"
-        src="../myndir/placeholder.png"
-        width="500"
-        alt="Þröngt skot sem sýnir eingöngu inngang og glugga við hliðina á honum. Húsið er hvítt með rauðu þaki. Upp að innganginum eru nokkrar tröppur og sitthvoru megin eru hvítar súlur sem ramma hurðina inn."
-      />
-    </div>
-    <p>Vivamus in imperdiet lectus. Phasellus sed arcu eu augue laoreet efficitur vitae at nisi.</p>
-    <p>25.000 kr.-</p>
-    <button></button>
-    <h4>Lausn 6</h4>
-    <p>Lorem id porttitor mauris. Nunc id porttitor mauris.</p>
-    <p>100.000 kr.-</p>
-     <div class="img-wrap">
-      <img
-        class="img"
-        src="../myndir/placeholder.png"
-        width="500"
-        alt="Þröngt skot sem sýnir eingöngu inngang og glugga við hliðina á honum. Húsið er hvítt með rauðu þaki. Upp að innganginum eru nokkrar tröppur og sitthvoru megin eru hvítar súlur sem ramma hurðina inn."
-      />
-    </div>
-    <button></button>
+
   </body>
+</html>
