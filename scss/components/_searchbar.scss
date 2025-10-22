@@ -1,17 +1,24 @@
+@use 'variables' as *;
 
-.searchbar {
-  --w: 481px;
-  --h: 40px;
-
-  width: var(--w);
-  height: var(--h);
+.toolbar {
   display: flex;
   align-items: center;
-  border: 1px solid #d1d5db;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.searchbar {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  border: 1px solid $border-light;
   border-radius: 9999px;
   background: #fff;
   overflow: hidden;
-  opacity: 1; 
+
   input {
     flex: 1;
     height: 100%;
@@ -24,11 +31,11 @@
 
   button {
     height: 100%;
-    width: var(--h);
+    width: 40px;
     display: grid;
     place-items: center;
     border: 0;
-    border-left: 1px solid #e5e7eb;
+    border-left: 1px solid $border-light;
     background: #f8fafc;
     cursor: pointer;
 
@@ -44,27 +51,20 @@
   }
 }
 
-.toolbar {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  margin-bottom: 16px;
-}
-
 .chip {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   height: 32px;
   padding: 0 12px;
-  border: 1px solid #d1d5db;
+  border: 1px solid $border-light;
   border-radius: 9999px;
   background: #111827;
   color: #fff;
   font-size: 13px;
 
-  &--light {
+  &--alt {
     background: #fff;
-    color: #111;
+    color: #111827;
   }
 }
