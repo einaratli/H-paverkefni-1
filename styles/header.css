@@ -1,10 +1,19 @@
-
+:root{
+  --container-max: 1200px;
+  --vp-pad: 16px;
+  --cols: 12;
+  --gutter: 24px;
+  --header_height: 112px;
+  /* color tokens used below */
+ 
+}
 .site-header {
   border-bottom: 1px solid #e5e7eb;
   background: #ffffff;
 }
 .site-header .wrap {
   max-width: 1100px;
+  max-height: fixed(--header_height);
   margin: 0 auto;
   padding: 10px 16px;
   display: flex;
@@ -24,14 +33,15 @@
 .logo {
   display: grid;
   place-items: center;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 48px;
   border-radius: 50px;
   border: 1px solid #e5e7eb;
   font-weight: 2000;
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 .title {
+  font: Title Page/inter;
   font-weight: 8000;
   font-size: 2.5rem;
 }

@@ -1,228 +1,157 @@
 <!DOCTYPE html>
 <html lang="is">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="icon"
-      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>🎨</text></svg>"
-    />
-    <link rel="stylesheet" href="public/main.css">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Forritarafjelagið</title>
 
-    <title>Listasafnið v5</title>
-    <meta
-      name="description"
-      content="Listasafnið heldur margar áhugaverðar sýningar og stendur fyrir viðburðum."
-    />
-    <meta property="og:title" content="Listasafnið" />
-    <meta
-      property="og:description"
-      content="Listasafnið heldur margar áhugaverðar sýningar og stendur fyrir viðburðum."
-    />
-    <meta property="og:image" content="/myndir/sharing.jpg" />
-    <link rel="stylesheet" href="./styles.scss" />
-  </head>
-<header class="site-header">
-  <div class="wrap">
-    <a class="brand" href="/">
-      <span class="logo" aria-hidden="true">λ</span>
-      <span class="title">Forritarafjelagið</span>
-    </a>
+  <!-- Stílar (relative to sidur/) -->
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/footer.css">
+  <link rel="stylesheet" href="styles/index.css">
 
-    <nav aria-label="Aðalvalmynd">
-      <ul class="nav">
-        <li><a href="/" aria-current="page">Forsíða</a></li>
-        <li><a href="/lausnir">Lausnir</a></li>
-        <li><a href="/um-okkur">Um okkur</a></li>
-        <!-- Samkvæmt kröfu: Starfsfólk -> forsíða -->
-        <li><a href="/">Starfsfólk</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  <!-- Auto-include script (runs on DOMContentLoaded) -->
+  <script src="scripts/include.js" defer></script>
+</head>
 
-<style>
-  /* Lágmarks stillingar */
-  .site-header {
-    border-bottom: 1px solid #e5e7eb;
-    background: #ffffff;
-  }
-  .site-header .wrap {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 10px 16px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    flex-wrap: wrap; /* brýtur undir smærra */
-  }
 
-  .brand {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    color: inherit;
-    text-decoration: none;
-  }
-  .logo {
-    display: grid;
-    place-items: center;
-    width: 32px;
-    height: 32px;
-    border-radius: 6px;
-    border: 1px solid #e5e7eb;
-    font-weight: 700;
-    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  }
-  .title {
-    font-weight: 700;
-    font-size: 1rem;
-  }
-
-  .nav {
-    list-style: none;
-    display: flex;
-    gap: 4px;
-    margin: 0;
-    padding: 0;
-  }
-  .nav a {
-    display: inline-block;
-    padding: 8px 10px;
-    border-radius: 8px;
-    text-decoration: none;
-    color: #111827;
-  }
-  .nav a:hover { background: #f3f4f6; }
-  .nav a[aria-current="page"] {
-    background: #eef2ff;
-    color: #3730a3;
-  }
-
-  /* Mjós skjár: raða undir hvort annað */
-  @media (max-width: 640px) {
-    .site-header .wrap {
-      justify-content: center;
-    }
-    .nav { flex-wrap: wrap; justify-content: center; }
-  }
-</style>
-  <body>
+  <body class ="page-index">
+    <div data-include="partials/header.html"></div>
     <main>
-        <section>
+        <section class="hero">
+          <div class="img-wrap">
+            <img class="hero__img" src="myndir/fartolva.jpg" alt="mynd sem synir kúlu og tölvu" />
+              <div class="on-image">
             <h1>Forritun er okkar fag</h1>
             <h2>Sanngjorn verd fyrir allar lausnir</h2>
-            <h2>Umsagnir vidskiptavina</h2>
-                <h3>Segir allt sem darf</h3>
-                <h4>Frabærar lausnir</h4>
-                    <div class="img-wrap">
-      <img
-        class="img"
-        src="myndir/avatar.png"
-        width="500"
-        alt="Þröngt skot sem sýnir eingöngu inngang og glugga við hliðina á honum. Húsið er hvítt með rauðu þaki. Upp að innganginum eru nokkrar tröppur og sitthvoru megin eru hvítar súlur sem ramma hurðina inn."
-      />
-    </div>
-                <div>Jóna Jónsdóttir Eigandi Spilabúðarinnar</div>
-                <h4>Allt stóðst áætlun</h4>
-                    <div class="img-wrap">
-      <img
-        class="img"
-        src="myndir/avatar.png"
-        width="500"
-        alt="Þröngt skot sem sýnir eingöngu inngang og glugga við hliðina á honum. Húsið er hvítt með rauðu þaki. Upp að innganginum eru nokkrar tröppur og sitthvoru megin eru hvítar súlur sem ramma hurðina inn."
-      />
-    </div>
-                <div>Gervimanneskja Langteftirnafn Forstjóri Stofnunarinnar</div>
-                <h4>Forritarafjelagið er svo sannarlega málið í forritunarverkefnum</h4>
-                    <div class="img-wrap">
-      <img
-        class="img"
-        src="myndir/avatar.png"
-        width="500"
-        alt="Þröngt skot sem sýnir eingöngu inngang og glugga við hliðina á honum. Húsið er hvítt með rauðu þaki. Upp að innganginum eru nokkrar tröppur og sitthvoru megin eru hvítar súlur sem ramma hurðina inn."
-      />
-    </div>
-                <div>Óli vefforritari</div>
-                <h4>Þessar lausnir spara tíma og vandræði, mælum með</h4>
-                    <div class="img-wrap">
-      <img
-        class="img"
-        src="myndir/avatar.png"
-        width="500"
-        alt="Þröngt skot sem sýnir eingöngu inngang og glugga við hliðina á honum. Húsið er hvítt með rauðu þaki. Upp að innganginum eru nokkrar tröppur og sitthvoru megin eru hvítar súlur sem ramma hurðina inn."
-      />
-    </div>
-                <div>Verkefnastjóri Stórt fyrirtæki í Reykjavík</div>
-            <h2>Lausnir</h2>
-                <h3>Allt sem þú þarft</h3>
-                    <h4>Forritunarumhverfi og prófanir</h4>
-                    <div>Allt um forritunarumhverfi og mismunandi eiðir til að prófa forrit í þeim</div>
-                        <div class="img-wrap">
-      <img
-        class="img"
-        src="myndir/forritari.jpg"
-        width="500"
-        alt="Þröngt skot sem sýnir eingöngu inngang og glugga við hliðina á honum. Húsið er hvítt með rauðu þaki. Upp að innganginum eru nokkrar tröppur og sitthvoru megin eru hvítar súlur sem ramma hurðina inn."
-      />
-    </div>
-                    <h4>Lausn 2</h4>
-                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-                    <div class="img-wrap">
-      <img
-        class="img"
-        src="myndir/abstrakt.jpg"
-        width="500"
-        alt="Þröngt skot sem sýnir eingöngu inngang og glugga við hliðina á honum. Húsið er hvítt með rauðu þaki. Upp að innganginum eru nokkrar tröppur og sitthvoru megin eru hvítar súlur sem ramma hurðina inn."
-      />
-    </div>
-                    <h4>Lausn 3</h4>
-              
-                    <div>Vestibulum vestibulum felis nulla, in suscipit justo dignissim ultrices. Nunc id porttitor mauris. Nunc id porttitor mauris.</div>
-                    <div class="img-wrap">
-      <img
-        class="img"
-        src="myndir/placeholder.png"
-        width="500"
-        alt="Þröngt skot sem sýnir eingöngu inngang og glugga við hliðina á honum. Húsið er hvítt með rauðu þaki. Upp að innganginum eru nokkrar tröppur og sitthvoru megin eru hvítar súlur sem ramma hurðina inn."
-      />
-    </div>
-                    <h4>Lausn 4</h4>
-                    <div>Vestibulum ac felis in lacus porta interdum. Curabitur vitae quam non massa interdum consectetur sed ut tellus.</div>
-                    <div class="img-wrap">
-      <img
-        class="img"
-        src="myndir/placeholder.png"
-        width="500"
-        alt="Þröngt skot sem sýnir eingöngu inngang og glugga við hliðina á honum. Húsið er hvítt með rauðu þaki. Upp að innganginum eru nokkrar tröppur og sitthvoru megin eru hvítar súlur sem ramma hurðina inn."
-      />
-    </div>
-                    <h4>Lausn 5</h4>
-                    <div>Vivamus in imperdiet lectus. Phasellus sed arcu eu augue laoreet efficitur vitae at nis</div>
-                    <div class="img-wrap">
-      <img
-        class="img"
-        src="myndir/placeholder.png"
-        width="500"
-        alt="Þröngt skot sem sýnir eingöngu inngang og glugga við hliðina á honum. Húsið er hvítt með rauðu þaki. Upp að innganginum eru nokkrar tröppur og sitthvoru megin eru hvítar súlur sem ramma hurðina inn."
-      />
-    </div>
-                    <h4>Lausn 6</h4>
-                    <div>Lorem id porttitor mauris. Nunc id porttitor mauris</div>
-                    <div class="img-wrap">
-      <img
-        class="img"
-        src="myndir/placeholder.png"
-        width="500"
-        alt="Þröngt skot sem sýnir eingöngu inngang og glugga við hliðina á honum. Húsið er hvítt með rauðu þaki. Upp að innganginum eru nokkrar tröppur og sitthvoru megin eru hvítar súlur sem ramma hurðina inn."
-      />
-    </div>
+              </div>
+          </div>
+          </section>
+          <section class="page">
+            <div class="page__section">
 
-        </section>
+              <section class="testimonials">
+                <header class="testimonials__head">
+            <h2>Umsagnir vidskiptavina</h2>
+                <p class="lead">Segir allt sem þarf</p>
+                </header>
+
+  <ol class="testimonials__grid">
+    <li class="t-card">
+      <blockquote class="t-quote">„Frábærar lausnir“</blockquote>
+      <div class="t-meta">
+        <img class="t-avatar" src="myndir/avatar.png" alt="" width="40" height="40">
+        <div>
+          <div class="t-name">Jóna Jónsdóttir</div>
+          <div class="t-role">Eigandi Spilabúðarinnar</div>
+        </div>
+      </div>
+    </li>
+
+    <li class="t-card">
+      <blockquote class="t-quote">„Allt stóðst áætlun“</blockquote>
+      <div class="t-meta">
+        <img class="t-avatar" src="myndir/avatar.png" alt="" width="40" height="40">
+        <div>
+          <div class="t-name">Gervimanneskja Langteftirnafn</div>
+          <div class="t-role">Forstjóri Stofnunarinnar</div>
+        </div>
+      </div>
+    </li>
+
+    <li class="t-card">
+      <blockquote class="t-quote">„Forritarafjelagið er svo sannarlega málið í forritunarverkefnum!“</blockquote>
+      <div class="t-meta">
+        <img class="t-avatar" src="myndir/avatar.png" alt="" width="40" height="40">
+        <div>
+          <div class="t-name">Óli</div>
+          <div class="t-role">Vefforritari</div>
+        </div>
+      </div>
+    </li>
+
+    <li class="t-card">
+      <blockquote class="t-quote">„Þessar lausnir spara tíma og vandræði, mælum með“</blockquote>
+      <div class="t-meta">
+        <img class="t-avatar" src="myndir/avatar.png" alt="" width="40" height="40">
+        <div>
+          <div class="t-name">Verkefnastjóri</div>
+          <div class="t-role">Stórt fyrirtæki í Reykjavík</div>
+        </div>
+      </div>
+    </li>
+  </ol>
+</section>
+<section class="solutions">
+  <header class="solutions__head">
+    <h2>Lausnir</h2>
+    <p class="lead">Allt sem þú þarft</p>
+  </header>
+
+  <ol class="solutions__grid">
+    <!-- Card 1 -->
+    <li class="s-card">
+      <a class="s-link" href="/lausnir">
+        <div class="s-media">
+          <img src="myndir/forritari.jpg" alt="Forritari að vinna við tölvu">
+        </div>
+        <div class="s-body">
+          <h3 class="s-title">Forritunarumhverfi og prófanir</h3>
+          <p class="s-desc">Allt um forritunarumhverfi og mismunandi leiðir til að prófa forrit í þeim.</p>
+        </div>
+      </a>
+    </li>
+
+    <li class="s-card">
+      <a class="s-link" href="/lausnir">
+        <div class="s-media">
+          <img src="myndir/abstrakt.jpg" alt="Abstrakt ljós">
+        </div>
+        <div class="s-body">
+          <h3 class="s-title">Lausn #2</h3>
+          <p class="s-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+      </a>
+    </li>
+
+    <li class="s-card">
+      <a class="s-link" href="/lausnir">
+        <div class="s-media">
+          <img src="myndir/placeholder.png" alt="" />
+        </div>
+        <div class="s-body">
+          <h3 class="s-title">Lausn #3</h3>
+          <p class="s-desc">Vestibulum vestibulum felis nulla, in suscipit justo dignissim ultrices.</p>
+        </div>
+      </a>
+    </li>
+
+    <li class="s-card">
+      <a class="s-link" href="/lausnir">
+        <div class="s-media"><img src="myndir/placeholder.png" alt=""></div>
+        <div class="s-body"><h3 class="s-title">Lausn #4</h3><p class="s-desc">Curabitur vitae quam non massa interdum.</p></div>
+      </a>
+    </li>
+        <li class="s-card">
+      <a class="s-link" href="/lausnir">
+        <div class="s-media"><img src="myndir/placeholder.png" alt=""></div>
+        <div class="s-body"><h3 class="s-title">Lausn #5</h3><p class="s-desc">Vivamus in imperdiet lectus. Phasellus sed arcu.</p></div>
+      </a>
+    </li>
+
+    <li class="s-card">
+      <a class="s-link" href="/lausnir">
+        <div class="s-media"><img src="myndir/placeholder.png" alt=""></div>
+        <div class="s-body"><h3 class="s-title">Lausn #6</h3><p class="s-desc">Nunc id porttitor mauris. Nunc id porttitor mauris.</p></div>
+      </a>
+    </li>
+  </ol>
+</section>
+       
 </main>
 
-<link rel="stylesheet" href="/styles/footer.css">
-<div data-include="/partials/footer.html"></div>
+<link rel="stylesheet" href="styles/footer.css">
+<div data-include="partials/footer.html"></div>
   </body>
 </html>
