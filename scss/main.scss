@@ -1,6 +1,8 @@
+@use 'components/variables';
 @use "components/filter-card";
 @use "components/searchbar"; 
-
+@use "components/cards"; 
+@use "components/layout";
 @import url("../node_modules/@fontsource/inter/variable.css");
 
 
