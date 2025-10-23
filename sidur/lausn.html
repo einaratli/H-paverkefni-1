@@ -3,69 +3,143 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Forritarafjelagið</title>
+  <title>Forritunarumhverfi og prófanir — Forritarafjelagið</title>
 
-  <!-- Stílar (relative to sidur/) -->
+  <!-- styles (relative frá /sidur/) -->
   <link rel="stylesheet" href="../styles/styles.css">
   <link rel="stylesheet" href="../styles/header.css">
   <link rel="stylesheet" href="../styles/footer.css">
+  <link rel="stylesheet" href="../styles/lausn.css">
 
-  <!-- Auto-include script (runs on DOMContentLoaded) -->
   <script src="../scripts/include.js" defer></script>
 </head>
-  <body>
-      <div data-include="../partials/header.html"></div>
+<body class="page-lausn">
+  <div data-include="../partials/header.html"></div>
 
-    <main>
-    <div>>
+  <main>
+    <section class="page">
+      <div class="page__section">
 
-    </div>
-    <div>"Vinsælt!" 25.000kr.-</div>
-    <div>Allt um forritunarumhverfi og mismunandi lei[ir til að prófa forrit í þeim</div>
-    <div>Forritunarumhverfi</div>
-    <div>Próf aðferð</div>
-    <button>Kaupa</button>
-    <section>
-      <li>Hversu stor teuymi á þetta við</li>
-      <ul>Þessi lausn virkar fyrir allar stærðir teyma, allt frá einum forritara til hundruða. Þið munið sjá ljósið eftir að hafa farið í gegnum þessa lausn.</ul>
-      <li>Hvernig fer kennsla á lausnina fram?</li>
-      <ul>Vestibulum vestibulum felis nulla, in suscipit justo dignissim ultrices. Nunc id porttitor mauris. Nunc id porttitor mauris.</ul>
-      <h1>Forritunarumhverfi og profanir</h1>
-        <h2>Nyjustu umsagnir</h2>
-            <h3>usmogn 1</h3>
-            <div>*****</div>
-            <div>Lausn? Þetta er ekkert minna en ný heimspeki fyrir lífið! Mæli 100% með, megið ekki missa af þessu.</div>
-            <div>Jóna Jónsdóttir</div>
-            <div>1.agúst 2025</div>
+        <!-- tví­dálka toppur -->
+        <div class="ld-top">
+          <figure class="ld-media">
+            <img src="../myndir/forritari.jpg" alt="Forritari að vinna við tölvu" />
+          </figure>
 
-                <div class="img-wrap">
-      <img
-        class="img"
-        src="myndir/avatar.png"
-        width="500"
-        alt="Þröngt skot sem sýnir eingöngu inngang og glugga við hliðina á honum. Húsið er hvítt með rauðu þaki. Upp að innganginum eru nokkrar tröppur og sitthvoru megin eru hvítar súlur sem ramma hurðina inn."
-      />
-    </div>
-            <h3>usmogn 2</h3>
-            <div>*****</div>
-            
-            <div>Einstaklega góð lausn</div>
-            <div>Jóna Jónsdóttir</div>
-            <div>1.agúst 2025</div>
-                <div class="img-wrap">
-      <img
-        class="img"
-        src="myndir/avatar.png"
-        width="500"
-        alt="Þröngt skot sem sýnir eingöngu inngang og glugga við hliðina á honum. Húsið er hvítt með rauðu þaki. Upp að innganginum eru nokkrar tröppur og sitthvoru megin eru hvítar súlur sem ramma hurðina inn."
-      />
-    </div>
-            <h3>usmogn 3</h3>
-        <h2>Skradu /ig a postlista</h2>
-            <h3>Latum /ig vita af uppfaerslum og nyrri virkni i /essari lausn</h3>
+          <div class="ld-info">
+            <h1 class="ld-title">Forritunarumhverfi og prófanir</h1>
+
+            <div class="ld-badges">
+              <span class="badge badge--green">Vinsælt!</span>
+            </div>
+
+            <div class="ld-price">25.000 kr.-</div>
+            <p class="ld-lead">
+              Allt um forritunarumhverfi og mismunandi leiðir til að prófa forrit í þeim.
+            </p>
+
+            <form class="ld-form" action="#" method="post">
+              <label>
+                <span>Forritunarumhverfi</span>
+                <select>
+                  <option>Veldu...</option>
+                  <option>VS Code</option>
+                  <option>JetBrains</option>
+                  <option>Vim/Neovim</option>
+                </select>
+              </label>
+
+              <label>
+                <span>Próf aðferð</span>
+                <select>
+                  <option>Veldu...</option>
+                  <option>Unit</option>
+                  <option>Integration</option>
+                  <option>E2E</option>
+                </select>
+              </label>
+
+              <button type="submit" class="btn-buy">Kaupa</button>
+            </form>
+
+            <!-- FAQ -->
+            <div class="ld-faq">
+              <details open>
+                <summary>Hversu stór teymi á þetta við?</summary>
+                <div>
+                  Þessi lausn virkar fyrir allar stærðir teyma, allt frá einum forritara til hundruða.
+                  Þið munið sjá ljósið eftir að hafa farið í gegnum þessa lausn.
+                </div>
+              </details>
+              <details>
+                <summary>Hvernig fer kennsla á lausnina fram?</summary>
+                <div>
+                  Fyrirlestur, verklegar æfingar og upptökur sem þið hafið aðgang að eftir á.
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
+
+        <!-- Umsagnir -->
+        <section class="ld-reviews">
+          <h2>Nýjustu umsagnir</h2>
+
+          <ol class="reviews-grid">
+            <li class="r-card">
+              <div class="r-stars" aria-label="5 af 5">★★★★★</div>
+              <h3 class="r-title">Alveg frábær heimspeki</h3>
+              <p class="r-text">Lausn? þetta er ekkert minna en ný heimspeki fyrir lífið!</p>
+              <div class="r-meta">
+                <img class="r-avatar" src="../myndir/avatar.png" alt="" width="40" height="40">
+                <div>
+                  <div class="r-name">Jóna Jónsdóttir</div>
+                  <div class="r-date">1. ágúst 2025</div>
+                </div>
+              </div>
+            </li>
+
+            <li class="r-card">
+              <div class="r-stars">★★★★★</div>
+              <h3 class="r-title">Einstaklega góð lausn</h3>
+              <p class="r-text">Leysti öll okkar vandamál.</p>
+              <div class="r-meta">
+                <img class="r-avatar" src="../myndir/avatar.png" alt="" width="40" height="40">
+                <div>
+                  <div class="r-name">Jóna Jónsdóttir</div>
+                  <div class="r-date">20. september 2025</div>
+                </div>
+              </div>
+            </li>
+
+            <li class="r-card">
+              <div class="r-stars">★★★★★</div>
+              <h3 class="r-title">Forritunarumhverfi voru óskiljanleg fyrir þessa lausn!</h3>
+              <p class="r-text">Nú liggur allt ljóst fyrir!</p>
+              <div class="r-meta">
+                <img class="r-avatar" src="../myndir/avatar.png" alt="" width="40" height="40">
+                <div>
+                  <div class="r-name">Jóna Jónsdóttir</div>
+                  <div class="r-date">21. september 2025</div>
+                </div>
+              </div>
+            </li>
+          </ol>
+        </section>
+        <div class="newsletter-signup">
+ <h3>Skráðu þig á póstlista</h3>
+ <p>Látum þig vita af uppfærslum og nýrri virkni í þessari lausn.</p>
+ <form class="email-form" action="#" method="post">
+ <input type="email" placeholder="nafn@example.org" />
+ <button type="submit" class="btn-subscribe">Skrá mig</button>
+ </form>
+ </div> </div>
+
+      </div>
     </section>
-</main>
-<link rel="stylesheet" href="../styles/footer.css">
-<div data-include="../partials/footer.html"></div>
 
-  </body>
+  </main>
+
+  <div data-include="../partials/footer.html"></div>
+</body>
+</html>
