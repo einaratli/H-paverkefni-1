@@ -16,7 +16,9 @@ npm run lint:scss:fix
 
 ## Repo Skipulag
 
-![Repo Skipulag](myndir/readme.png)
+<h2>Repo Skipulag</h2>
+<p>Sjá mynd af möppuskipan verkefnisins hér að neðan:</p>
+<img src="myndir/readme.png" alt="Repo Skipulag" width="700">
 
 ```
 ## 👥 Höfundar
