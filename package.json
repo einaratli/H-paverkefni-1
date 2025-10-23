@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-  "dev": "sass --watch scss/main.scss styles/main.css",
-  "build": "sass scss/main.scss styles/main.css --style=compressed --no-source-map",
-  "lint": "stylelint 'scss/**/*.scss'"
-}
-,
+    "dev": "sass --watch scss/main.scss styles/main.css",
+   "start": "npm run dev",
+    "build": "sass scss/main.scss styles/main.css --style=compressed --no-source-map",
+    "lint": "stylelint \"**/*.scss\"",
+   "lint:scss": "stylelint \"**/*.scss\"",
+   "lint:scss:fix": "stylelint \"**/*.scss\" --fix"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Olibreki/H-paverkefni-1.git"
@@ -24,8 +26,10 @@
     "@fontsource/inter": "^5.2.8"
   },
   "devDependencies": {
+    "postcss-scss": "^4.0.9",
     "sass": "^1.93.2",
     "stylelint": "^16.25.0",
-    "stylelint-config-standard": "^39.0.1"
+    "stylelint-config-standard": "^39.0.1",
+    "stylelint-config-standard-scss": "^16.0.0"
   }
 }

@@ -41,6 +41,7 @@
   margin-inline: auto;
   padding-inline: var(--vp-pad);
 }
+
 .grid{
   display: grid;
   grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
@@ -58,6 +59,7 @@
   position: relative;
   isolation: isolate;
 }
+
 .hero .img-wrap{
   max-width: var(--container-max);   
   margin-inline: auto;               
@@ -84,7 +86,7 @@
 .img-wrap::after{
   content:"";
   position:absolute; inset:0;
-  background: linear-gradient(to top, rgba(0,0,0,0.12), transparent 60%);
+  background: linear-gradient(to top, rgb(0 0 0 / 12%), transparent 60%);
   z-index:0; pointer-events:none;
 }
 
@@ -99,16 +101,19 @@
   padding:clamp(16px,4vw,48px);
   z-index:1;
 }
+
 .img-wrap .on-image h1,
 .img-wrap .on-image h2{
   margin:0; line-height:1.1;
   text-shadow:none;
 }
+
 .img-wrap .on-image h1{
   color:#111;                      
   font-size:clamp(28px, 5.6vw, 56px);
   font-weight:800;
 }
+
 .img-wrap .on-image h2{
   color: var(--ink-dim);           
   font-size:clamp(16px, 3.2vw, 24px);
@@ -120,6 +125,7 @@
   background: var(--bg);
   border-top: 1px solid var(--line);
 }
+
 .page__section {
   max-width: var(--container-max);   
   margin-inline: auto;               
@@ -127,18 +133,21 @@
   background: #fff;                 
   box-sizing: border-box;            
 }
+
 .page__section h3{
   margin: 0 0 .25rem;
   font-size: 1.4rem;
   color: var(--ink);
   font-weight: 700;
 }
+
 .page__section h4{
   margin: 0 0 1rem;
   font-size: 1rem;
   color: var(--ink-dim);
   font-weight: 600;
 }
+
 .page__section p{
   margin: 0 0 1.25rem;
   color: #1f2937;
@@ -148,7 +157,8 @@
 @media (max-width: 900px){
   .footer__inner{ grid-template-columns: repeat(2, 1fr); }
 }
-@media (max-width: 560px){
+
+@media (width <= 560px){
   .header__inner{ flex-wrap: wrap; }
   .nav__list{ flex-wrap: wrap; }
   .footer__inner{ grid-template-columns: 1fr; }
