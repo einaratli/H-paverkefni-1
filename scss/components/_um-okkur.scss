@@ -3,8 +3,6 @@
   --vp-pad: 16px;
   --cols: 12;
   --gutter: 24px;
-
-
   --bg: #f8fafc;
   --line: #e5e7eb;
   --ink: #0f172a;
@@ -28,7 +26,7 @@
 
 
 
-@media (max-width: 768px){
+@media (width <= 768px){
   .grid{
     grid-template-columns: repeat(4, 1fr);  
     gap: 16px;
@@ -79,7 +77,7 @@
 .img-wrap::before{
   content:"";
   position:absolute; inset:0;
-  background: rgba(255,255,255,0.25);
+  background: rgb(255 255 255 / 25%);
   z-index:0; pointer-events:none;
 }
 
@@ -154,7 +152,7 @@
   line-height: 1.75;
 }
 
-@media (max-width: 900px){
+@media (width <= 900px){
   .footer__inner{ grid-template-columns: repeat(2, 1fr); }
 }
 
