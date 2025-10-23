@@ -6,15 +6,28 @@
   <title>Forritunarumhverfi og prófanir — Forritarafjelagið</title>
 
   <!-- styles (relative frá /sidur/) -->
-  <link rel="stylesheet" href="../styles/styles.css">
-  <link rel="stylesheet" href="../styles/header.css">
-  <link rel="stylesheet" href="../styles/footer.css">
-  <link rel="stylesheet" href="../styles/lausn.css">
+  <link rel="stylesheet" href="../styles/main.css" />
 
-  <script src="../scripts/include.js" defer></script>
+
 </head>
 <body class="page-lausn">
-  <div data-include="../partials/header.html"></div>
+   <header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <span class="logo" aria-hidden="true">λ</span>
+      <span class="title">Forritarafjelagið</span>
+    </a>
+
+    <nav aria-label="Aðalvalmynd">
+      <ul class="nav">
+        <li><a href="../index.html">Forsíða</a></li>
+        <li><a href="lausnir.html">Lausnir</a></li>
+        <li><a href="um-okkur.html" >Um okkur</a></li>
+        <li><a href="../index.html">Starfsfólk</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
   <main>
     <section class="page">
@@ -140,6 +153,51 @@
 
   </main>
 
-  <div data-include="../partials/footer.html"></div>
+
+<footer class="site-footer" aria-label="Fótur">
+  <div class="wrap">
+    <section class="foot-col">
+      <h3 class="foot-title">Samfélagsmiðlar</h3>
+      <div class="socials" aria-label="Merki samfélagsmiðla">
+        <span class="icon" role="img" aria-label="Facebook">f</span>
+        <span class="icon" role="img" aria-label="Instagram">◎</span>
+        <span class="icon" role="img" aria-label="X">x</span>
+        <span class="icon" role="img" aria-label="LinkedIn">in</span>
+        <span class="icon" role="img" aria-label="GitHub">🐙</span>
+      </div>
+    </section>
+
+    <section class="foot-col">
+      <h3 class="foot-title">Verkefni</h3>
+      <ul class="foot-list">
+        <li><a href="../index.html">Verkefni 1</a></li>
+        <li><a href="../index.html">Verkefni 2</a></li>
+        <li><a href="../index.html">Verkefni 3</a></li>
+        <li><a href="../index.html">Verkefni 4</a></li>
+      </ul>
+    </section>
+
+    <section class="foot-col">
+      <h3 class="foot-title">Lausnir</h3>
+      <ul class="foot-list">
+        <li><a href="lausnir.html">Lausn 1</a></li>
+        <li><a href="lausnir.html">Lausn 2</a></li>
+        <li><a href="lausnir.html">Lausn 3</a></li>
+        <li><a href="lausnir.html">Lausn 4</a></li>
+        <li><a href="lausnir.html">Lausn 5</a></li>
+      </ul>
+    </section>
+
+    <section class="foot-col">
+      <h3 class="foot-title">Síður</h3>
+      <ul class="foot-list">
+        <li><a href="../index.html">Forsíða</a></li>
+        <li><a href="lausn.html">Lausnir</a></li>
+        <li><a href="um-okkur.html">Um okkur</a></li>
+        <li><a href="../index.html">Starfsfólk</a></li>
+      </ul>
+    </section>
+  </div>
+</footer>
 </body>
 </html>
