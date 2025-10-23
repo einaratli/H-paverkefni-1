@@ -35,22 +35,42 @@
 }
 .foot-list a:hover { background: #f3f4f6; }
 
-/* Samfélagsmerki – einföld „badge“ stílsmíði */
+
 .socials { display: flex; gap: 8px; align-items: center; }
 
-.icon {
-  display: grid;
-  place-items: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 6px;
-  border: 1px solid #e5e7eb;
-  font-weight: 700;
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+.socials {
+ display: flex; 
+ gap: 8px; 
+ align-items: center;
 }
 
-/* Mjós skjár: tvær dálkaraðir, svo ein */
-@media (width <= 900px) {
+
+.socials a {
+ display: block;
+ padding: 4px; 
+ border-radius: 6px;
+ transition: background-color 0.2s ease;
+}
+
+
+.social-icon {
+ width: 24px;
+ height: 24px;
+ display: block; 
+}
+
+/* Hover áhrif */
+.socials a:hover {
+ background-color: #f3f4f6; 
+}
+
+
+@media (max-width: 560px) {
+ .socials { flex-wrap: wrap; }
+}
+
+
+@media (max-width: 900px) {
   .site-footer .wrap { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
