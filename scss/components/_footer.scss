@@ -46,17 +46,22 @@
 
 
 .socials a {
- display: block;
- padding: 4px; 
- border-radius: 6px;
- transition: background-color 0.2s ease;
+     display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 6px;
+  text-decoration: none;       /* ✅ no underline on images */
+  line-height: 0;              /* ✅ removes baseline that causes stray lines */
+  transition: background-color 0.2s ease, outline-color 0.2s ease;
+ 
 }
 
 
 .social-icon {
- width: 24px;
- height: 24px;
- display: block; 
+ width: 18px;       
+  height: 18px;      
+  display: block;
 }
 
 /* Hover áhrif */
