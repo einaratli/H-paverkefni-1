@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "dev": "sass --watch scss/main.scss styles/main.css",
+   "start": "npm run dev",
     "build": "sass scss/main.scss styles/main.css --style=compressed --no-source-map",
-    "lint:scss": "stylelint \"**/*.scss\"",
-     "lint:scss:fix": "stylelint \"**/*.scss\" --fix"
+    "lint": "stylelint \"**/*.scss\"",
+   "lint:scss": "stylelint \"**/*.scss\"",
+   "lint:scss:fix": "stylelint \"**/*.scss\" --fix"
   },
   "repository": {
     "type": "git",
