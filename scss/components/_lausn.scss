@@ -163,7 +163,6 @@
   padding-block: 24px;
 }
 
-.testimonials { padding-block: 24px; }
 .testimonials__head { margin-bottom: 16px; }
 .testimonials__head h2 { margin: 0 0 4px; font-size: 1.5rem; font-weight: 800; }
 .testimonials__head .lead { margin: 0; color: var(--ink-dim, #475569); }
@@ -259,7 +258,6 @@
 
 .ld-form{
 display:grid; gap:10px; 
-
 grid-template-columns: 1fr 1fr; 
 margin: 6px 0 10px;
 }

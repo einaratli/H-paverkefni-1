@@ -3,7 +3,7 @@
   --vp-pad: 16px;
   --cols: 12;
   --gutter: 24px;
-  --header_height: 112px;
+  --header-height: 112px;
  
  
 }
@@ -71,7 +71,7 @@
   color: #3730a3;
 }
 
-@media (max-width: 640px) {
+@media (width <= 640px) {
   .site-header .wrap { justify-content: center; }
   .nav { flex-wrap: wrap; justify-content: center; }
 }

@@ -38,11 +38,7 @@
 
 .socials { display: flex; gap: 8px; align-items: center; }
 
-.socials {
- display: flex; 
- gap: 8px; 
- align-items: center;
-}
+
 
 
 .socials a {
@@ -70,12 +66,12 @@
 }
 
 
-@media (max-width: 560px) {
+@media (width <= 560px) {
  .socials { flex-wrap: wrap; }
 }
 
 
-@media (max-width: 900px) {
+@media (width <= 900px) {
   .site-footer .wrap { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
