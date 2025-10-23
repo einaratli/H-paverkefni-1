@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("../node_modules/@fontsource/inter/variable.css");
+@import "../node_modules/@fontsource/inter/variable.css";
 .filter-card {
   display: flex;
   flex-direction: column;
@@ -12,7 +12,7 @@
   border: 1px solid #e5e7eb;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
   font-size: 14px;
   line-height: 1.4;
 }
@@ -138,7 +138,7 @@
   left: var(--max);
 }
 
-@media (max-width: 900px) {
+@media (width <= 900px) {
   .filter-card {
     max-width: none;
     width: 100%;
@@ -257,7 +257,7 @@
   display: inline-block;
   padding: 10px 18px;
   border-radius: 6px;
-  background: var(--Background-Brand-Default, #2C2C2C);
+  background: var(--background-brand-default, #2C2C2C);
   color: #fff;
   border: none;
   cursor: pointer;
@@ -302,7 +302,7 @@
   gap: 24px;
 }
 
-@media (max-width: 900px) {
+@media (width <= 900px) {
   .page-wrapper {
     grid-template-columns: repeat(6, 1fr);
     column-gap: 24px;
@@ -317,7 +317,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media (max-width: 600px) {
+@media (width <= 600px) {
   .page-wrapper {
     grid-template-columns: repeat(4, 1fr);
     column-gap: 16px;
@@ -335,7 +335,7 @@
 /* Samstíll við header */
 .site-footer {
   border-top: 1px solid #e5e7eb;
-  background: #ffffff;
+  background: #fff;
   color: #111827;
 }
 
@@ -349,7 +349,7 @@
 }
 
 .foot-title {
-  margin: 0 0 8px 0;
+  margin: 0 0 8px;
   font-size: 0.95rem;
   font-weight: 700;
 }
@@ -394,12 +394,12 @@
 }
 
 /* Mjós skjár: tvær dálkaraðir, svo ein */
-@media (max-width: 900px) {
+@media (width <= 900px) {
   .site-footer .wrap {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
-@media (max-width: 560px) {
+@media (width <= 560px) {
   .site-footer .wrap {
     grid-template-columns: 1fr;
   }
@@ -412,25 +412,24 @@
   --vp-pad: 16px;
   --cols: 12;
   --gutter: 24px;
-  --header_height: 112px;
-  /* color tokens used below */
+  --header-height: 112px;
 }
 
 .site-header {
   border-bottom: 1px solid #e5e7eb;
-  background: #ffffff;
+  background: #fff;
 }
 
 .site-header .wrap {
   max-width: 1100px;
-  max-height: fixed(--header_height);
+  max-height: var(--header-height);
   margin: 0 auto;
   padding: 10px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  flex-wrap: wrap; /* brýtur undir smærra */
+  flex-wrap: wrap;
 }
 
 .brand {
@@ -449,11 +448,10 @@
   border-radius: 50px;
   border: 1px solid #e5e7eb;
   font-weight: 2000;
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 .title {
-  font: Title Page/inter;
+  font-family: "Title Page", Inter, Arial, sans-serif;
   font-weight: 8000;
   font-size: 2.5rem;
 }
@@ -483,8 +481,7 @@
   color: #3730a3;
 }
 
-/* Mjós skjár: raða undir hvort annað */
-@media (max-width: 640px) {
+@media (width <= 640px) {
   .site-header .wrap {
     justify-content: center;
   }
@@ -540,7 +537,7 @@
   grid-column-start: 3;
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .grid {
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
@@ -633,7 +630,6 @@
 }
 
 .img-wrap .on-image h2 {
-  color: var(--ink-dim);
   font-size: clamp(16px, 3.2vw, 24px);
   font-weight: 600;
   color: white;
@@ -672,12 +668,12 @@
   line-height: 1.75;
 }
 
-@media (max-width: 900px) {
+@media (width <= 900px) {
   .footer__inner {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media (max-width: 560px) {
+@media (width <= 560px) {
   .header__inner {
     flex-wrap: wrap;
   }
@@ -692,11 +688,8 @@
   }
 }
 .testimonials {
-  height: fixed(--testimonials-height);
+  height: var(--testimonials-height);
   overflow: auto;
-}
-
-.testimonials {
   padding-block: 24px;
 }
 
@@ -724,7 +717,7 @@
   grid-template-columns: 1fr;
 }
 
-@media (min-width: 900px) {
+@media (width >= 900px) {
   .testimonials__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -768,7 +761,7 @@
 }
 
 .solutions {
-  height: fixed(--solutions-height);
+  height: var(--solutions-height);
   overflow: auto;
 }
 
@@ -781,12 +774,12 @@
   grid-template-columns: 1fr;
 }
 
-@media (min-width: 720px) {
+@media (width >= 720px) {
   .solutions__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
-@media (min-width: 1024px) {
+@media (width >= 1024px) {
   .solutions__grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -874,7 +867,7 @@
 
 .btn--secondary {
   background-color: #1f2937;
-  color: #ffffff;
+  color: #fff;
   border: 1px solid #1f2937;
 }
 
@@ -883,11 +876,7 @@
   border-color: #0f172a;
 }
 
-.img-wrap .on-image h2 {
-  margin-bottom: 0;
-}
-
-@media (max-width: 500px) {
+@media (width <= 500px) {
   .hero__buttons {
     flex-direction: column;
     gap: 0.75rem;
@@ -946,7 +935,7 @@
 
 /* ...bættu fleirum ef þarf */
 /* Mobile: einfaldast – allt staplast í 1 dálk og 16px gutter */
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .grid {
     grid-template-columns: repeat(4, 1fr); /* lítill grid, auðveldara að raða */
     gap: 16px;
@@ -1085,12 +1074,12 @@
 }
 
 /* --- Responsivt --- */
-@media (max-width: 900px) {
+@media (width <= 900px) {
   .footer__inner {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media (max-width: 560px) {
+@media (width <= 560px) {
   .header__inner {
     flex-wrap: wrap;
   }
@@ -1151,7 +1140,7 @@
   grid-column-start: 3;
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .grid {
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
@@ -1245,7 +1234,6 @@
 }
 
 .img-wrap .on-image h2 {
-  color: var(--ink-dim);
   font-size: clamp(16px, 3.2vw, 24px);
   font-weight: 600;
   color: white;
@@ -1285,12 +1273,8 @@
 }
 
 .testimonials {
-  height: fixed(--testimonials-height);
+  height: var(--testimonials-height);
   overflow: auto;
-}
-
-/* Header for the section */
-.testimonials {
   padding-block: 24px;
 }
 
@@ -1318,7 +1302,7 @@
   grid-template-columns: 1fr;
 }
 
-@media (min-width: 900px) {
+@media (width >= 900px) {
   .testimonials__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1370,7 +1354,7 @@
   gap: 20px;
 }
 
-@media (min-width: 960px) {
+@media (width >= 960px) {
   .ld-top {
     grid-template-columns: 1fr 1fr; /* mynd / upplýsingar */
     gap: 24px;
@@ -1438,11 +1422,6 @@
   margin: 6px 0 10px;
 }
 
-.btn-buy {
-  grid-column: span 2;
-  margin-top: 4px;
-}
-
 .ld-form label {
   display: flex;
   flex-direction: column;
@@ -1461,6 +1440,7 @@
 }
 
 .btn-buy {
+  grid-column: span 2;
   margin-top: 4px;
   padding: 10px 14px;
   border: none;
@@ -1525,7 +1505,7 @@
   grid-template-columns: 1fr;
 }
 
-@media (min-width: 960px) {
+@media (width >= 960px) {
   .reviews-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -1638,7 +1618,7 @@
   filter: brightness(1.08);
 }
 
-@media (max-width: 600px) {
+@media (width <= 600px) {
   .email-form {
     flex-direction: column;
     max-width: 100%;
@@ -1649,7 +1629,7 @@
   }
 }
 body {
-  font-family: "InterVariable", sans-serif;
+  font-family: InterVariable, sans-serif;
 }
 
 /*# sourceMappingURL=main.css.map */
