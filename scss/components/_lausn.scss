@@ -92,12 +92,12 @@
   z-index:0; pointer-events:none;
 }
 
-/* texti a mynd */
+
 .img-wrap .on-image{
   position:absolute; inset:0;
   display:flex; flex-direction:column;
-  justify-content:center;     /* miðja lóðrétt */
-  align-items:center;         /* miðja lárétt */
+  justify-content:center;     
+  align-items:center;         
   text-align:center;
   gap:.25rem;
   padding:clamp(16px,4vw,48px);
@@ -156,7 +156,7 @@
   height: fixed(--testimonials-height);
   overflow: auto;   
 }
-/* Header for the section */
+
 .testimonials { padding-block: 24px; }
 .testimonials__head { margin-bottom: 16px; }
 .testimonials__head h2 { margin: 0 0 4px; font-size: 1.5rem; font-weight: 800; }
@@ -175,7 +175,7 @@
   .testimonials__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } 
 }
 
-/* Card */
+
 .t-card {
   background: #fff;
   border: 1px solid var(--line, #e5e7eb);
@@ -198,9 +198,9 @@
 .t-avatar { border-radius: 999px; display: block; }
 .t-name { font-weight: 700; line-height: 1.1; }
 .t-role { font-size: .9rem; color: var(--ink-dim, #475569); line-height: 1.1; }
-/* ===== Lausn (product detail) ===== */
 
-/* top grid */
+
+
 .ld-top{
   display:grid;
   grid-template-columns: 1fr;
@@ -208,12 +208,12 @@
 }
 @media (min-width: 960px){
   .ld-top{
-    grid-template-columns: 1fr 1fr; /* mynd / upplýsingar */
+    grid-template-columns: 1fr 1fr; 
     gap: 24px;
   }
 }
 
-/* image */
+
 .ld-media{
   margin: 0;
   background:#f3f4f6;
@@ -226,7 +226,7 @@
   object-fit:cover;
 }
 
-/* info */
+
 .ld-info .ld-title{
   margin: 0 0 6px;
   font-size: clamp(20px, 2.2vw, 24px);
@@ -246,11 +246,11 @@
 }
 .ld-lead{ margin: 0 0 14px; color:#475569; }
 
-/* form */
+
 .ld-form{
 display:grid; gap:10px; 
 
-grid-template-columns: 1fr 1fr; /* 2 dálkar */
+grid-template-columns: 1fr 1fr; 
 margin: 6px 0 10px;
 }
 
@@ -277,7 +277,7 @@ margin-top: 4px;
 }
 .btn-buy:hover{ filter: brightness(1.08); }
 
-/* FAQ */
+
 .ld-faq{ display:flex; flex-direction:column; gap:10px; margin-top:12px; }
 .ld-faq details{
   border:1px solid #e5e7eb; border-radius:8px; background:#fff;
@@ -288,7 +288,7 @@ margin-top: 4px;
 .ld-faq summary::-webkit-details-marker{ display:none; }
 .ld-faq details > div{ padding: 0 12px 12px; color:#374151; }
 
-/* ===== Reviews ===== */
+
 .ld-reviews{ margin-top: 28px; }
 .ld-reviews h2{ margin: 0 0 12px; font-size:1.25rem; font-weight:800; }
 

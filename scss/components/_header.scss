@@ -4,7 +4,7 @@
   --cols: 12;
   --gutter: 24px;
   --header_height: 112px;
-  /* color tokens used below */
+ 
  
 }
 .site-header {
@@ -20,7 +20,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  flex-wrap: wrap; /* brýtur undir smærra */
+  flex-wrap: wrap; 
 }
 
 .brand {
@@ -66,7 +66,6 @@
   color: #3730a3;
 }
 
-/* Mjós skjár: raða undir hvort annað */
 @media (max-width: 640px) {
   .site-header .wrap { justify-content: center; }
   .nav { flex-wrap: wrap; justify-content: center; }
