@@ -3,8 +3,6 @@
   --vp-pad: 16px;
   --cols: 12;
   --gutter: 24px;
-
-  
   --bg: #f8fafc;
   --line: #e5e7eb;
   --ink: #0f172a;
@@ -32,7 +30,7 @@
 
 
 
-@media (max-width: 768px){
+@media (width <= 768px){
   .grid{
     grid-template-columns: repeat(4, 1fr);  
     gap: 16px;
@@ -45,6 +43,7 @@
   margin-inline: auto;
   padding-inline: var(--vp-pad);
 }
+
 .grid{
   display: grid;
   grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
@@ -62,6 +61,7 @@
   position: relative;
   isolation: isolate;
 }
+
 .hero .img-wrap{
   max-width: var(--container-max);   
   margin-inline: auto;               
@@ -81,14 +81,14 @@
 .img-wrap::before{
   content:"";
   position:absolute; inset:0;
-  background: rgba(1,1,1,0.10); 
+  background: rgb(1 1 1 / 10%); 
   z-index:0; pointer-events:none;
 }
 
 .img-wrap::after{
   content:"";
   position:absolute; inset:0;
-  background: linear-gradient(to top, rgba(0,0,0,0.12), transparent 60%);
+  background: linear-gradient(to top, rgb(0 0 0 / 12%), transparent 60%);
   z-index:0; pointer-events:none;
 }
 
@@ -103,19 +103,21 @@
   padding:clamp(16px,4vw,48px);
   z-index:1;
 }
+
 .img-wrap .on-image h1,
 .img-wrap .on-image h2{
   margin:0; line-height:1.1;
   text-shadow:none;
 }
+
 .img-wrap .on-image h1{
   color:white;                      
   font-size:clamp(28px, 5.6vw, 56px);
   font-weight:800;
   
 }
-.img-wrap .on-image h2{
-  color: var(--ink-dim);           
+
+.img-wrap .on-image h2{           
   font-size:clamp(16px, 3.2vw, 24px);
   font-weight:600;
   color:white;    
@@ -126,6 +128,7 @@
   background: var(--bg);
   border-top: 1px solid var(--line);
 }
+
 .page__section {
   max-width: var(--container-max);   
   margin-inline: auto;               
@@ -133,31 +136,33 @@
   background: #fff;                  
   box-sizing: border-box;            
 }
+
 .page__section h3{
   margin: 0 0 .25rem;
   font-size: 1.4rem;
   color: var(--ink);
   font-weight: 700;
 }
+
 .page__section h4{
   margin: 0 0 1rem;
   font-size: 1rem;
   color: var(--ink-dim);
   font-weight: 600;
 }
+
 .page__section p{
   margin: 0 0 1.25rem;
   color: #1f2937;
   line-height: 1.75;
 }
 
-
-.testimonials{
-  height: fixed(--testimonials-height);
-  overflow: auto;   
+ .testimonials{
+  height: var(--testimonials-height);
+  overflow: auto;
+  padding-block: 24px;
 }
-/* Header for the section */
-.testimonials { padding-block: 24px; }
+
 .testimonials__head { margin-bottom: 16px; }
 .testimonials__head h2 { margin: 0 0 4px; font-size: 1.5rem; font-weight: 800; }
 .testimonials__head .lead { margin: 0; color: var(--ink-dim, #475569); }
@@ -171,7 +176,8 @@
   gap: 16px;
   grid-template-columns: 1fr;             
 }
-@media (min-width: 900px) {
+
+@media (width >= 900px) {
   .testimonials__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } 
 }
 
@@ -181,7 +187,7 @@
   border: 1px solid var(--line, #e5e7eb);
   border-radius: 12px;
   padding: 16px 18px;
-  box-shadow: 0 1px 0 rgba(0,0,0,.02), 0 1px 2px rgba(0,0,0,.04);
+  box-shadow: 0 1px 0 rgb(0 0 0 / 2%), 0 1px 2px rgb(0 0 0 / 4%);
   max-width: var(--t-card-w);
   min-height: var(--t-card-h);
 }
@@ -198,6 +204,7 @@
 .t-avatar { border-radius: 999px; display: block; }
 .t-name { font-weight: 700; line-height: 1.1; }
 .t-role { font-size: .9rem; color: var(--ink-dim, #475569); line-height: 1.1; }
+
 /* ===== Lausn (product detail) ===== */
 
 /* top grid */
@@ -206,7 +213,8 @@
   grid-template-columns: 1fr;
   gap: 20px;
 }
-@media (min-width: 960px){
+
+@media (width >= 960px){
   .ld-top{
     grid-template-columns: 1fr 1fr; /* mynd / upplýsingar */
     gap: 24px;
@@ -219,6 +227,7 @@
   background:#f3f4f6;
   border:1px solid #e5e7eb;
 }
+
 .ld-media img{
   width:100%;
   height:auto;
@@ -233,6 +242,7 @@
   font-weight: 800;
 }
 .ld-badges{ display:flex; gap:8px; margin: 6px 0 8px; }
+
 .badge{
   display:inline-block; padding:4px 8px; border-radius:999px;
   font-size:.8rem; font-weight:700; border:1px solid #e5e7eb; background:#fff;
@@ -249,28 +259,26 @@
 /* form */
 .ld-form{
 display:grid; gap:10px; 
-
 grid-template-columns: 1fr 1fr; /* 2 dálkar */
 margin: 6px 0 10px;
 }
 
 
-.btn-buy {
-grid-column: span 2; 
-margin-top: 4px; 
 
-}
 
 
 .ld-form label{
   display:flex; flex-direction:column; gap:6px; font-weight:600; font-size:.95rem;
 }
+
 .ld-form select{
   appearance:none;
   padding:10px 12px; border:1px solid #e5e7eb; border-radius:8px; background:#fff; font:inherit;
 }
+
 .btn-buy{
-  margin-top: 4px;
+    grid-column: span 2;
+   margin-top: 4px;
   padding: 10px 14px;
   border: none; border-radius: 8px;
   background:#111827; color:#fff; font-weight:700; cursor:pointer;
@@ -279,9 +287,11 @@ margin-top: 4px;
 
 /* FAQ */
 .ld-faq{ display:flex; flex-direction:column; gap:10px; margin-top:12px; }
+
 .ld-faq details{
   border:1px solid #e5e7eb; border-radius:8px; background:#fff;
 }
+
 .ld-faq summary{
   cursor:pointer; list-style:none; padding:10px 12px; font-weight:700;
 }
@@ -296,14 +306,15 @@ margin-top: 4px;
   list-style:none; margin:0; padding:0;
   display:grid; gap:16px; grid-template-columns: 1fr;
 }
-@media (min-width: 960px){
+
+@media (width >= 960px){
   .reviews-grid{ grid-template-columns: repeat(3, minmax(0,1fr)); }
 }
 
 .r-card{
   background:#fff; border:1px solid #e5e7eb; border-radius:12px;
   padding: 14px 16px;
-  box-shadow: 0 1px 0 rgba(0,0,0,.02), 0 1px 2px rgba(0,0,0,.04);
+  box-shadow: 0 1px 0 rgb(0 0 0 / 2%), 0 1px 2px rgb(0 0 0 / 4%);
 }
 .r-stars{ color:#9ca3af; letter-spacing: 2px; font-size:.95rem; margin-bottom:6px; }
 .r-title{ margin:0 0 6px; font-size:1.05rem; font-weight:800; }
@@ -315,15 +326,10 @@ margin-top: 4px;
 
 
 .newsletter-signup {
- 
  max-height: fixed(277px); 
  box-sizing: border-box; 
-
  text-align: center;
-
  padding-block: 40px; 
- 
- 
  border-top: 1px dashed var(--line); 
  margin-top: 40px;
 }
@@ -336,7 +342,6 @@ margin-top: 4px;
 }
 
 .newsletter-signup p {
-
  margin: 4px 0 8px; 
  color: var(--ink-dim);
 }
@@ -344,14 +349,12 @@ margin-top: 4px;
 .email-form {
  display: flex;
  justify-content: center;
- 
  gap: 8px; 
  max-width: 400px; 
  margin: 0 auto;
 }
 
 .email-form input[type="email"] {
- 
  width: 272px; 
  height: 40px; 
  padding: 0 12px; 
@@ -364,7 +367,6 @@ margin-top: 4px;
 }
 
 .email-form .btn-subscribe {
- 
  width: 90px;
  height: 40px;
  line-height: 40px; 
@@ -383,11 +385,12 @@ margin-top: 4px;
  filter: brightness(1.08);
 }
 
-@media (max-width: 600px) {
+@media (width <= 600px) {
 .email-form {
  flex-direction: column;
  max-width: 100%;
  }
+
 .email-form input[type="email"],
  .email-form .btn-subscribe {
   width: 100%; 

@@ -1,9 +1,10 @@
 /* Samstíll við header */
 .site-footer {
   border-top: 1px solid #e5e7eb;
-  background: #ffffff;
+  background: #fff;
   color: #111827;
 }
+
 .site-footer .wrap {
   max-width: 1100px;
   margin: 0 auto;
@@ -14,7 +15,7 @@
 }
 
 .foot-title {
-  margin: 0 0 8px 0;
+  margin: 0 0 8px;
   font-size: 0.95rem;
   font-weight: 700;
 }
@@ -25,6 +26,7 @@
   padding: 0;
 }
 .foot-list li { margin: 6px 0; }
+
 .foot-list a {
   text-decoration: none;
   color: #111827;
@@ -35,6 +37,7 @@
 
 /* Samfélagsmerki – einföld „badge“ stílsmíði */
 .socials { display: flex; gap: 8px; align-items: center; }
+
 .icon {
   display: grid;
   place-items: center;
@@ -47,10 +50,11 @@
 }
 
 /* Mjós skjár: tvær dálkaraðir, svo ein */
-@media (max-width: 900px) {
+@media (width <= 900px) {
   .site-footer .wrap { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
-@media (max-width: 560px) {
+
+@media (width <= 560px) {
   .site-footer .wrap { grid-template-columns: 1fr; }
   .socials { flex-wrap: wrap; }
 }

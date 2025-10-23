@@ -3,24 +3,26 @@
   --vp-pad: 16px;
   --cols: 12;
   --gutter: 24px;
-  --header_height: 112px;
-  /* color tokens used below */
+  --header-height: 112px;
+
  
 }
+
 .site-header {
   border-bottom: 1px solid #e5e7eb;
-  background: #ffffff;
+  background: #fff;
 }
+
 .site-header .wrap {
-  max-width: 1100px;
-  max-height: fixed(--header_height);
+    max-width: 1100px;
+    max-height: var(--header-height);
   margin: 0 auto;
   padding: 10px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  flex-wrap: wrap; /* brýtur undir smærra */
+  flex-wrap: wrap; 
 }
 
 .brand {
@@ -30,6 +32,7 @@
   color: inherit;
   text-decoration: none;
 }
+
 .logo {
   display: grid;
   place-items: center;
@@ -38,10 +41,10 @@
   border-radius: 50px;
   border: 1px solid #e5e7eb;
   font-weight: 2000;
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
+
 .title {
-  font: Title Page/inter;
+  font-family: "Title Page", Inter, Arial, sans-serif;
   font-weight: 8000;
   font-size: 2.5rem;
 }
@@ -53,6 +56,7 @@
   margin: 0;
   padding: 0;
 }
+
 .nav a {
   display: inline-block;
   padding: 8px 10px;
@@ -61,13 +65,13 @@
   color: #111827;
 }
 .nav a:hover { background: #f3f4f6; }
+
 .nav a[aria-current="page"] {
   background: #eef2ff;
   color: #3730a3;
 }
 
-/* Mjós skjár: raða undir hvort annað */
-@media (max-width: 640px) {
+@media (width <= 640px) {
   .site-header .wrap { justify-content: center; }
   .nav { flex-wrap: wrap; justify-content: center; }
 }
